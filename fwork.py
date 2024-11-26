@@ -54,7 +54,7 @@ if st.session_state.page == "PERSONAL":
         with left_column:
             # --- PICTURE ---
             default_image_url = "https://github.com/Ezekiel220/streamlit_biography/blob/main/trapezoid.jpg?raw=true"
-
+            uploaded_image = st.file_uploader("Upload a 2x2 ID", type=["jpg", "jpeg", "png"])
             if uploaded_image is not None:
                 try:
                     image = Image.open(uploaded_image)
