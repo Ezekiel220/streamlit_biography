@@ -53,7 +53,7 @@ if st.session_state.page == "PERSONAL":
         left_column, right_column = st.columns(2)  # Alignment
         with left_column:
             # --- PICTURE ---
-            default_image_path = "https://scontent.fdvo2-1.fna.fbcdn.net/v/t1.15752-9/462569513_1087992735916374_5401259255403351626_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeGMv-E8-iD1n5A9iCxZqDXa1AeZk571sqXUB5mTnvWypbl51fG5k2W7EwTam9usgXLdr96QpYNyet909wDdM4cR&_nc_ohc=0t8DHwHBRQgQ7kNvgGfIdGc&_nc_zt=23&_nc_ht=scontent.fdvo2-1.fna&oh=03_Q7cD1QH38gZN4Nr0BJ1CeSdCOy2VvfZ22En69Kf9Y7ROa6KsnQ&oe=676C96EA" #image file
+            default_image_path = "https://github.com/Ezekiel220/streamlit_biography/blob/main/trapezoid.jpg?raw=true" #image file
             
             uploaded_image = st.file_uploader("Upload a 2x2 ID", type=["jpg", "jpeg", "png"])
             if uploaded_image is not None:
