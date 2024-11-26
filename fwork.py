@@ -53,7 +53,8 @@ if st.session_state.page == "PERSONAL":
         left_column, right_column = st.columns(2)  # Alignment
         with left_column:
             # --- PICTURE ---
-            default_image_url = "https://github.com/Ezekiel220/streamlit_biography/blob/main/trapezoid.jpg?raw=true"
+            default_image_path = "trapezoid.jpg" #image file
+            
             uploaded_image = st.file_uploader("Upload a 2x2 ID", type=["jpg", "jpeg", "png"])
             if uploaded_image is not None:
                 try:
@@ -61,14 +62,17 @@ if st.session_state.page == "PERSONAL":
                     resized_image = image.resize((600, 600))
                     col1, col2, col3 = st.columns([1, 3, 1])  # Center the image
                     with col2:
-                        st.image(image, caption="PROFILE", width=275)
+                        st.image(image, caption = f"PROFILE", width = 275)
                 except Exception as e:
-                    st.error(f"Error displaying the uploaded image: {e}")
-                else:
+                    st.error(f"Error displaying the upload image: {e}")
+            else:
+                try:
+                    default_image = Image.open(default_image_path)
                     col1, col2, col3 = st.columns([1, 3, 1])  # Center the image
                     with col2:
-                        st.image(default_image_url, caption="PROFILE", width=275)
-
+                        st.image(default_image, caption = f"PROFILE", width = 275)
+                except FileNotFoundError:
+                    st.error("Image not found. Please check file_image_path")
                     
             st.write("---")
             name = st.text_input("NAME", "EJ Lawrence S. Comandante")
